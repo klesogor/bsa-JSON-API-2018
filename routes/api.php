@@ -16,3 +16,10 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+JsonApi::register('v1',[], function ($api, $router) {
+    $api->resource('users');
+    $api->resource('wallets');
+    $api->resource('money');
+    $api->resource('currencies');
+});
