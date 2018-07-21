@@ -18,6 +18,7 @@ class CreateMoneyTable extends Migration
             $table->unsignedInteger('currency_id');
             $table->unsignedInteger('wallet_id');
             $table->float('amount');
+            $table->timestamps();
             $table->softDeletes();
 
             $table->foreign('currency_id')->references('id')->on('currency');

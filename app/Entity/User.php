@@ -13,8 +13,6 @@ class User extends Model
 
     protected $table = 'user';
 
-    public $timestamps = false;
-
     public function wallet()
     {
         return $this->hasOne(Wallet::class);

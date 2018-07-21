@@ -17,7 +17,6 @@ class Money extends Model
 
     protected $table = 'money';
 
-    public $timestamps = false;
 
 
     public function currency()
