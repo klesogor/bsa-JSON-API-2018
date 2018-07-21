@@ -10,6 +10,7 @@ namespace App\Services;
 
 
 use App\Entity\User;
+use App\Entity\Wallet;
 use App\Requests\SaveUserRequest;
 use Illuminate\Support\Collection;
 
@@ -44,6 +45,10 @@ class UserService implements UserServiceInterface
 
     public function delete(int $id): void
     {
+        $wallet = Wallet::where('user_id',$id)->first;
+        if(!is_null($wallet)) {
+            $wallet->delete();
+        }
         User::find($id)->delete();
     }
 }
