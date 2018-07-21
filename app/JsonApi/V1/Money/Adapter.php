@@ -1,6 +1,6 @@
 <?php
 
-namespace App\JsonApi\V1\Users;
+namespace App\JsonApi\V1\Money;
 
 use CloudCreativity\LaravelJsonApi\Eloquent\AbstractAdapter;
 use CloudCreativity\LaravelJsonApi\Pagination\StandardStrategy;
@@ -24,7 +24,7 @@ class Adapter extends AbstractAdapter
      */
     public function __construct(StandardStrategy $paging)
     {
-        parent::__construct(new \App\Entity\User(), $paging);
+        parent::__construct(new \App\Entity\Money(), $paging);
     }
 
     /**
@@ -34,9 +34,7 @@ class Adapter extends AbstractAdapter
      */
     protected function filter($query, Collection $filters)
     {
-       if($filters->has('email')){
-           $query->where('email',$filters['email']);
-       }
+        // TODO
     }
 
 }
